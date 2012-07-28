@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<install version="2.5" type="plugin" group="content" method="upgrade">
+	<name>Access - Content</name>
+	<author>Chris French</author>
+	<authorEmail>chris@ammonitenetworks.com</authorEmail>
+	<authorUrl>http://www.ammonitenetworks.com</authorUrl>
+	<version>1.0.0</version>
+	<creationDate>July 2012</creationDate>
+	<copyright>2012 ammonitenetworks.com</copyright>
+	<license>GNU General Public License</license>
+	<description>URL plugin for favorites</description>
+
+	<files>
+		<filename plugin="access">access.php</filename>
+		<folder>tmpl</folder>
+	</files>
+	
+		<config>
+		<fields name="params">
+			<fieldset name="basic">
+				<field name="menuorcontent" type="list" default="1" label="Choose Which ID" description="Choose which menu ID">
+					<option
+						value="1">Menu IDs</option>
+					<option
+						value="0">Content IDs</option>
+				</field>
+				<field name="menuids" type="text" default="" label="List of menuids" description="Comma seperated list of menu ids" />
+				<field name="contentids" type="text" default="" label="List of content IDs" description="Comma seperated list of content item ids" />	
+				<field name="access_username" type="text" default="" label="Username" description="Username that needs to be submitted" />
+				<field name="access_password" type="text" default="" label="Password" description="Password" />
+					
+			</fieldset>
+		</fields>
+	</config>
+</install>
