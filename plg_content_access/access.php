@@ -25,12 +25,13 @@ class plgContentAccess extends JPlugin {
 		//if ($context == 'com_finder.indexer') {
 		//	return true;
 		//}
-		$app = &JFactory::getApplication();
+		$app = JFactory::getApplication();
 		if ($app -> isAdmin())
 			return;
 		
-		//access, this means they only have to authenicate ones, and not on each ID
-		$session =& JFactory::getSession();
+		$this->checkLogin();
+		//access, this means they only have to authenicate once, and not on each ID
+		$session = JFactory::getSession();
 		$dostuff = $session->get("hasaccess", "0");
 		if($dostuff) return;
 		
@@ -38,7 +39,7 @@ class plgContentAccess extends JPlugin {
 			$ids = explode(',', $this->params->get('menuids'));
 		//check if is a menu item
 
-		$menu = &JSite::getMenu();
+		$menu = JSite::getMenu();
 		$active = $menu -> getActive();
 			$id = $active->id;
 		} else {
@@ -50,7 +51,7 @@ class plgContentAccess extends JPlugin {
 
 		//check if is a menu item
 
-		$menu = &JSite::getMenu();
+		$menu = JSite::getMenu();
 		$active = $menu -> getActive();
 		
 		if(in_array($id, $ids)){
