@@ -8,7 +8,7 @@
 	<creationDate>July 2012</creationDate>
 	<copyright>2012 ammonitenetworks.com</copyright>
 	<license>GNU General Public License</license>
-	<description>URL plugin for favorites</description>
+	<description>Content Access Plugin for joomla</description>
 
 	<files>
 		<filename plugin="access">access.php</filename>
